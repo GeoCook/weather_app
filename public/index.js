@@ -17,9 +17,19 @@ button.addEventListener('click', async ()=>{
     summary.textContent = data.weatherData.summary
     temp.textContent = `${Math.floor((data.weatherData.temperature-32)*5/9)}°C`
 
-    if(summary.textContent=="Partly Cloudy"){
-        display.src="./assets/rain.jpg"
+    if(summary.textContent=="Partly Cloudy"||summary.textContent=="Mostly Cloudy"){
+        display.src="./assets/partlycloudy.png"
+    }
+    else if(summary.textContent=="hot"){
+        display.src="./assets/hot.png"
+    }
+    else if(summary.textContent=="Light Rain"){
+        display.src="./assets/rain.png"
+    }
+    else if(summary.textContent=="Clear"){
+        display.src="./assets/sunny.png"
     }
 
+    
 
 })
